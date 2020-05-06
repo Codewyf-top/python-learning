@@ -9,10 +9,11 @@ while guess != secret and times < 3:
         print("太大了")
     else:
         print("太小了")
-    times = times + 1
+
 
     temp = input("Please try again:")
     guess = int(temp)
+    times = times + 1
 
 
 if (times <= 3) and (guess == secret):

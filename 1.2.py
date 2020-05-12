@@ -1,23 +1,22 @@
 import random
 secret = random.randint(1,10)
-temp=input("请猜猜codewyf现在心里想的是什么数字：")
+temp = input("请猜猜wyf现在心里想的是什么数字：")
 guess = int(temp)
 times = 1
 
-while guess != secret and times < 3:
-    if guess > secret:
-        print("太大了")
-    else:
+while guess != secret and times <= 3:
+    if guess < secret :
         print("太小了")
+    else:
+        print("太大了")
 
-
-    temp = input("Please try again:")
+    temp = input("请继续猜测：")
     guess = int(temp)
     times = times + 1
 
-
-if (times <= 3) and (guess == secret):
-    print("你可真是个小机灵鬼")
-    print("但是你猜中了也没有奖励")
+if guess == secret and times < 3:
+    print("你可这是个小机灵鬼")
 else:
-    print("您当前的次数已经用尽，请稍后再试！")
+    print("难受啊，次数用完了！")
+
+print("GAME OVER！")

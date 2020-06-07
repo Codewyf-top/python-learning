@@ -27,7 +27,10 @@ y = x.pow(2) + 0.1*torch.normal(torch.zeros(*x.size()))
 # optimizer = torch.optim.SGD()
 
 torch_dataset = Data.TensorDataset(x,y)
-loader = Data.DataLoader(dataset=torch_dataset, batch_size=BATCH_SIZE, shuffle=True,num_workers=2)
+#macOS
+#loader = Data.DataLoader(dataset=torch_dataset, batch_size=BATCH_SIZE, shuffle=True,num_workers=2)
+#windows
+loader = Data.DataLoader(dataset=torch_dataset, batch_size=BATCH_SIZE, shuffle=True)
 
 class Net(torch.nn.Module):
     def __init__(self):

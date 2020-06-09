@@ -18,3 +18,4 @@ SGD == Stochastic Gradient Descent
     torch.nn.Linear(10,2),)
     
 2.3 如何保存模型和读取模型（包含完整保存模型与仅保存模型参数）
+2.6 在MNIST的数据集上进行一个1epoch的训练

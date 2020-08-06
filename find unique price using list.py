@@ -2,7 +2,7 @@
 """
 @Time:2020/8/6 16:42
 @Auth:Codewyf
-@File:find unquie price using list.py
+@File:find unique price using list.py
 @IDE:PyCharm
 @Motto: Go Ahead Instead Of Heasitating
 """

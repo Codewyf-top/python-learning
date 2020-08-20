@@ -15,7 +15,7 @@ for i in range(-2,0):
 print(list2)
 
 list3 = []
-list3 = list1[2:5]#左闭右开
+list3 = list1[2:5] #左闭右开
 list4 = list1[::-2]
 print(list3)
 print(list4)

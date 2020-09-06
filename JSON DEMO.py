@@ -27,7 +27,7 @@ params = {
     'price': 123.4,
     'amount': 23
 }
-
+"""
 params_str = json.dumps(params)
 
 print('after json serialization')
@@ -37,3 +37,20 @@ original_params = json.loads(params_str)
 
 print('after json deserialization')
 print('type of original_params = {}, original_params = {}'.format(type(original_params), original_params))
+
+"""
+"""
+after json serializationtype of params_str = , params_str = {'symbol': '123456', 'type': 'limit', 'price': 123.4, 'amount': 23}after json deserializationtype of original_params = , original_params = {'symbol': '123456', 'type': 'limit', 'price': 123.4, 'amount': 23}
+"""
+with open('params.json','w') as fout:
+    params_str = json.dump(params, fout)
+
+with open('params.json', 'r') as fin:
+    original_params = json.load(fin)
+
+print('After json deserialization')
+print('type of original_params = {}, original_params = {}'.format(type(original_params), original_params))
+"""
+After json deserialization
+type of original_params = <class 'dict'>, original_params = {'symbol': '123456', 'type': 'limit', 'price': 123.4, 'amount': 23}
+"""

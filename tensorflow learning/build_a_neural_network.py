@@ -10,7 +10,10 @@
 
 import tensorflow as tf
 import numpy as np
-
+import matplotlib.pyplot as plt
+import os
+#for MacOS system
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
 def add_layer(inputs, in_size, out_size, activation_function=None):
     Weights = tf.Variable(tf.random_normal([in_size, out_size]))
     biases = tf.Variable(tf.zeros([1, out_size]) + 0.1) #因为biases初始值不为0所以初始值随便加上一个0.1
@@ -33,14 +36,25 @@ prediction = add_layer(l1, 10, 1, activation_function=None) #in_size=10是l1的o
 
 loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - prediction), reduction_indices=[1])) #reduce_sum是对每一个例子进行求和 reduce_mean对所有和求一个平均值
 train_step = tf.train.GradientDescentOptimizer(0.1).minimize(loss) #learning rate 这里的train_step相当于optimizer
-
+#important step
 init = tf.global_variables_initializer()#初始所有变量
-
 sess = tf.Session()
 sess.run(init)
 
+fig = plt.figure()
+ax = fig.add_subplot(1,1,1)
+ax.scatter(x_data, y_data)
+plt.ion()
+plt.show()
 for i in range(1000):
     sess.run(train_step, feed_dict={xs:x_data, ys:y_data})
     if i % 50 == 0:
-        print(sess.run(loss, feed_dict={xs:x_data, ys:y_data}))
+        # print(sess.run(loss, feed_dict={xs:x_data, ys:y_data}))
+        try:
+            ax.lines.remove(lines[0])
+        except Exception:
+            pass
+        prediction_value = sess.run(prediction, feed_dict={xs:x_data})
+        lines = ax.plot(x_data, prediction_value, 'r-', lw=5)
 
+        plt.pause(0.1)

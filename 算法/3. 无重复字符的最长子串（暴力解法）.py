@@ -27,4 +27,9 @@ class Solution:
                 rk += 1
             #第 i 到 rk 个字符是一个极长的无重复字符子串
             ans = max(ans, rk - i + 1)
+        print(ans)
         return ans
+
+if __name__ == '__main__':
+    s = ''
+    Solution.lengthOfLongestSubstring(s,s='abcabc')

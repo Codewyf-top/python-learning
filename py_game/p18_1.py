@@ -8,27 +8,27 @@
 
 """
 
-import pygame
+import py_game
 import sys
 
-pygame.init()
+py_game.init()
 
 size = width, height = 600, 400
 speed = [-2,1]
 bg = (255,255,255)
 
 #create window
-screen = pygame.display.set_mode(size)
+screen = py_game.display.set_mode(size)
 
 #set window name
-pygame.display.set_caption('初次见面，请大家多多关照!')
-turtle = pygame.image.load("turtle.png")
+py_game.display.set_caption('初次见面，请大家多多关照!')
+turtle = py_game.image.load("turtle.png")
 #get the pic position
 position = turtle.get_rect()
 
 while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+    for event in py_game.event.get():
+        if event.type == py_game.QUIT:
             sys.exit()
 
 #move the pic
@@ -45,5 +45,5 @@ if position.top < 0 or position.bottom > height:
 screen.fill(bg)
 screen.blit(turtle, position)
 pygame.display.flip()
-#pygame.display.update()
+#py_game.display.update()
 pygame.time.delay(10)

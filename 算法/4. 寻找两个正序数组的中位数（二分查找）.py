@@ -4,7 +4,7 @@
 @Auth ： Codewyf
 @File ：4. 寻找两个正序数组的中位数（二分查找）.py
 @IDE ：PyCharm
-@Motto：Go Ahead Instead of Heasitating
+@Motto：Go Ahead Instead of Hesitating
 
 """
 # 记录二分查找的信息

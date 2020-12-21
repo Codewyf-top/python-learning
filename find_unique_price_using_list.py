@@ -4,7 +4,7 @@
 @Auth:Codewyf
 @File:find_unique_price_using_list.py
 @IDE:PyCharm
-@Motto: Go Ahead Instead Of Heasitating
+@Motto: Go Ahead Instead Of Hesitating
 """
 #如果还是选择使用列表，对应的代码如下，其中，A 和 B 是两层循环。同样假设原始列表有 n 个元素，那么，在最差情况下，需要 O(n^2) 的时间复杂度。
 #list version

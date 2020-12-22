@@ -10,7 +10,8 @@
 import sys
 try:
     f = open('file.txt', r)
-    ....# some data processing
+    ....
+    # some data processing
 except OSError as err:
     print("OS error: {}".format(err))
 except:

@@ -49,7 +49,7 @@ class RNN(nn.Module):
         self.out = nn.Linear(64, 10)
 
     def forward(self, x):
-        r_out, (h_n, h_c) = self.rnn(x, None)       # x (batch, time_step, input_size
+        r_out, (h_n, h_c) = self.rnn(x, None)       # x (batch, time_step, input_size) h_n, h_c 分别是一个分线程和一个主线程的hidden state
         out = self.out(r_out[:, -1, :])#(batch, time_step, input)  为了得到这一批图片的最后一个时间点的output
         return out
 

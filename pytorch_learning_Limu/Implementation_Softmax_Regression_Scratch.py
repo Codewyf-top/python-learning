@@ -201,3 +201,16 @@ train acc: 0.44718285611470543
 train acc: 0.8478166666666667
 train acc: 0.8349
 """
+
+
+def predict_ch3(net, test_iter, n=6):
+    """Predict labels (defined in Chapter 3)."""
+    for X, y in test_iter:
+        break
+    trues = d2l.get_fashion_mnist_labels(y)
+    preds = d2l.get_fashion_mnist_labels(net(X).argmax(axis=1))
+    titles = [true + '\n' + pred for true, pred in zip(trues, preds)]
+    d2l.show_images(X[0:n].reshape((n, 28, 28)), 1, n, titles=titles[0:n])
+
+
+predict_ch3(net, test_iter)

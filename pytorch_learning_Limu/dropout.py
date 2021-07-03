@@ -33,7 +33,7 @@ dropout1, dropout2 = 0.2, 0.6
 
 
 class Net(nn.Module):
-    def __init__(self, num_inputs, num_outputs, num_hiddens1, num_hiddens2, is_Training = True):
+    def __init__(self, num_inputs, num_outputs, num_hiddens1, num_hiddens2, is_Training=True):
         super(Net, self).__init__()
         self.num_inputs = num_inputs
         self.training = is_Training
@@ -41,7 +41,6 @@ class Net(nn.Module):
         self.lin2 = nn.Linear(num_hiddens1, num_hiddens2)
         self.lin3 = nn.Linear(num_hiddens2, num_outputs)
         self.relu = nn.ReLU()
-
 
     def forward(self, X):
         H1 = self.relu(self.lin1(X.reshape((-1, self.num_inputs))))

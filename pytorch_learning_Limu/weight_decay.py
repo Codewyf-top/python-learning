@@ -11,7 +11,6 @@ import torch
 from torch import nn
 from d2l import torch as d2l
 
-
 n_train, n_test, num_inputs, batch_size = 20, 100, 200, 5
 true_w, true_b = torch.ones((num_inputs, 1)) * 0.01, 0.05
 train_data = d2l.synthetic_data(true_w, true_b, n_train)
@@ -23,7 +22,7 @@ test_iter = d2l.load_array(test_data, batch_size, is_train=False)
 def init_params():
     w = torch.normal(0, 1, size=(num_inputs, 1), requires_grad=True)
     b = torch.zeros(1, requires_grad=True)
-    return [w,b]
+    return [w, b]
 
 
 def l2_penalty(w):
@@ -44,7 +43,6 @@ def train(lambd):
         if (epoch + 1) % 5 == 0:
             print(f'epoch + 1 {d2l.evaluate_loss(net, train_iter, loss)} {d2l.evaluate_loss(net, test_iter, loss)}')
             print('L2 norm of w:', torch.norm(w).item())
-
 
 
 # train(lambd=0)
@@ -68,7 +66,7 @@ def train_concise(wd):
             l = loss(net(X), y)
             l.backward()
             trainer.step()
-        if (epoch + 1) % 5 ==0:
+        if (epoch + 1) % 5 == 0:
             d2l.evaluate_loss(net, train_iter, loss)
             d2l.evaluate_loss(net, test_iter, loss)
     print('L2 norm of w:', net[0].weight.norm().item())
